@@ -1,0 +1,7 @@
+# GitHub Pages publishes every file in this repo at 1000.world/<filename>.
+# CLAUDE.md is working notes, not site content — keep it in the repo, out of
+# the published site. Anything else added here that isn't part of the site
+# (notes, drafts, source files) belongs in this list too.
+exclude:
+  - CLAUDE.md
+  - README.md
