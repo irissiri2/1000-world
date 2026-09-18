@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Iris Alonzo — Creative Director and Founder</title>
+<link rel="icon" type="image/png" href="../favicon-32x32.png">
+<meta property="og:title" content="Iris Alonzo">
+<meta property="og:description" content="Creative Director and Founder">
+<meta property="og:image" content="https://1000.world/Iris2025.jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<style>
+:root {
+    --ink: #000;
+    --paper: #fff;
+    --quiet: #000;
+    --hi: #ffff54;
+    --row: clamp(150px, 19vw, 260px);
+    --bar: 176px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: var(--paper);
+    border-bottom: 1px solid var(--ink);
+    padding: 22px 28px 16px;
+}
+.name {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0 18px;
+    margin-bottom: 20px;
+}
+.name h1 {
+    margin: 0;
+    background: var(--hi);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0 .08em;
+    font-size: clamp(28px, 6.2vw, 62px);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.name p {
+    margin: 0;
+    font-size: clamp(11px, 1.4vw, 14px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+nav ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 34px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav a {
+    display: inline-block;
+    padding: 4px 3px;
+    color: var(--ink);
+    text-decoration: none;
+    font-size: clamp(11px, 1.3vw, 13px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+nav a:hover { background: var(--hi); }
+nav a[aria-current="true"] { background: var(--hi); }
+mark { background: var(--hi); color: inherit; }
+
+main { padding: 0 28px; }
+section {
+    scroll-margin-top: 132px;
+    padding: 76px 0;
+    border-bottom: 1px solid var(--ink);
+}
+section:last-of-type { border-bottom: 0; }
+
+.head { max-width: 1400px; margin: 0 auto 44px; }
+.head h2 {
+    margin: 0 0 18px;
+    font-size: clamp(24px, 4.4vw, 46px);
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.head p { margin: 0 0 14px; max-width: 56ch; font-size: clamp(15px, 1.5vw, 18px); }
+.head p:last-child { margin-bottom: 0; }
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+    max-width: 1400px;
+    margin: 0 auto 60px;
+}
+.cluster:last-child { margin-bottom: 0; }
+.cluster .tag {
+    flex: 0 0 100%;
+    margin: 0 0 6px;
+    font-size: clamp(24px, 4.4vw, 46px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+    text-transform: uppercase;
+}
+.cluster .tag a {
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--hi);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    padding: 0 .1em;
+}
+.cluster .tag a:hover { background: var(--ink); color: var(--hi); }
+.cluster .tag .when {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    color: var(--quiet);
+    text-transform: uppercase;
+}
+.cluster figure { position: relative; margin: 0; }
+.cluster figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 7px 9px;
+    background: var(--hi);
+    color: var(--ink);
+    font-size: 12px;
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity .12s ease;
+    pointer-events: none;
+}
+.cluster figure:hover figcaption { opacity: 1; }
+.cluster .era {
+    align-self: center;
+    margin: 0 4px;
+    font-size: clamp(17px, 2.2vw, 30px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--hi);
+    padding: 0 .18em;
+}
+.ribbon { --row: clamp(108px, 13vw, 168px); gap: 10px; }
+
+/* the record: the resume timeline, two columns */
+.record {
+    max-width: 1400px;
+    margin: 36px auto 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 46px;
+}
+.record li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr) auto;
+    gap: 0 18px;
+    padding: 9px 0;
+    border-top: 1px solid var(--ink);
+    break-inside: avoid;
+    font-size: clamp(13px, 1.2vw, 15px);
+}
+.record .yr { color: var(--quiet); letter-spacing: 0.04em; white-space: nowrap; }
+.record li { align-items: center; }
+.record .pair { display: flex; gap: 8px; }
+.record .pic { display: block; height: clamp(150px, 17vw, 230px); width: auto; }
+
+/* the pictures open large, always centred on the same point */
+.record .haspic { cursor: pointer; }
+.record .haspic > .pic,
+.record .haspic > .pair {
+    position: fixed;
+    z-index: 20;
+    top: calc(var(--bar) + (100vh - var(--bar)) / 2);
+    left: 74%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .12s ease;
+    pointer-events: none;
+    outline: 12px solid var(--paper);
+    box-shadow: 0 0 0 1px rgba(0,0,0,.14);
+}
+.record .haspic > .pic { max-height: calc(100vh - var(--bar) - 40px); max-width: 46vw; height: auto; width: auto; }
+.record .haspic > .pair { gap: 16px; align-items: center; }
+.record .haspic > .pair .pic { max-height: calc(100vh - var(--bar) - 56px); max-width: 22vw; height: auto; width: auto; }
+.record .haspic:hover > .pic,
+.record .haspic:hover > .pair,
+.record .haspic:focus > .pic,
+.record .haspic:focus > .pair { opacity: 1; visibility: visible; }
+/* a row in the right-hand column opens its picture on the left */
+.record .haspic.flip > .pic,
+.record .haspic.flip > .pair { left: 26%; }
+.record li:focus { outline: none; }
+
+/* phones have no hover, so one tap opens every picture at once */
+.showpics {
+    display: none;
+    margin: 28px 0 0;
+    padding: 7px 10px;
+    border: 0;
+    background: var(--hi);
+    color: var(--ink);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.record a { color: var(--ink); text-decoration: none; background: var(--hi); padding: 0 .1em; }
+.record a:hover { background: var(--ink); color: var(--hi); }
+.cluster img {
+    display: block;
+    height: var(--row);
+    width: auto;
+    max-width: 100%;
+}
+
+#contact h2 a { text-decoration: none; background: var(--hi); padding: 0 .08em; }
+#contact h2 a:hover { background: var(--ink); color: var(--hi); }
+
+footer {
+    padding: 40px 28px 56px;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--quiet);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 14px;
+}
+
+@media (max-width: 760px) {
+    :root { --row: 128px; }
+    header { padding: 16px 18px 12px; }
+    .name { margin-bottom: 14px; gap: 0 12px; }
+    nav ol { gap: 0 18px; }
+    main { padding: 0 18px; }
+    section { padding: 48px 0; }
+    .head { margin-bottom: 26px; }
+    .cluster { gap: 8px; margin-bottom: 40px; }
+    .ribbon { --row: 92px; gap: 6px; }
+    .record { columns: 1; }
+    .showpics { display: block; }
+    .record .haspic > .pic,
+    .record .haspic > .pair { display: none; }
+    .record.open .haspic > .pic,
+    .record.open .haspic > .pair {
+        display: block;
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        outline: 0;
+        justify-self: end;
+    }
+    .record.open .haspic > .pair { display: flex; }
+    .record.open .pic { height: 96px; width: auto; }
+    .record li { grid-template-columns: 1fr auto; gap: 2px 12px; }
+    .record .yr { grid-column: 1 / -1; }
+    .record .pair { display: flex; gap: 8px; justify-self: end; }
+    footer { padding: 28px 18px 40px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <div class="name">
+        <h1>Iris Alonzo</h1>
+        <p>Creative Director and Founder</p>
+    </div>
+    <nav>
+        <ol>
+            <li><a href="#about">About</a></li>
+            <li><a href="#creative-direction">Creative Direction</a></li>
+            <li><a href="#founding">Founding</a></li>
+            <li><a href="#advisory">Advisory &amp; Collaborations</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ol>
+    </nav>
+</header>
+
+<main>
+
+<section id="about">
+    <div class="head">
+        <h2>About</h2>
+        <p>I design systems of culture, identity, and participation. My work spans
+        global brands, emerging technologies, and civic futures — from shaping the
+        visual language of a generation to building new frameworks for how society
+        organizes itself.</p>
+    </div>
+    <button class="showpics" type="button">Show images</button>
+    <ol class="record">
+        <li><span class="yr">2026</span><span>Creative Direction, leading the <mark>California gubernatorial campaign</mark></span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Founder, <mark>1000.world</mark> — interdisciplinary consulting parent company</span><img class="pic" src="../Iris2025.jpeg" alt="Iris Alonzo, 2025" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>CEO, <a href="https://enormecorp.com" target="_blank" rel="noopener">ENORME</a></span><img class="pic" src="img/about-enorme.jpg" alt="ENORME launch" loading="lazy"></li>
+        <li><span class="yr">2025—</span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2016–2025</mark></span><span>Co-Founder, Creative Director, <a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a></span><img class="pic" src="img/about-office.jpg" alt="Iris Alonzo and Carolina Crespo for Office Magazine, photograph by Camraface" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2004–2015</mark></span><span>Global Creative Director, <mark>American Apparel</mark></span><img class="pic" src="img/about-aa-ad.jpg" alt="Meet Iris. — American Apparel" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2002</mark></span><span>Discovered <mark>Buckminster Fuller</mark> and <mark>Andy Kaufman</mark></span><span class="pair"><img class="pic" src="img/about-fuller.jpg" alt="Buckminster Fuller, photograph by Dan Lindsay, CC BY 3.0" loading="lazy"><img class="pic" src="img/about-kaufman.jpg" alt="Debbie Harry and Andy Kaufman, 1983, photograph by Bernard Gotfryd" loading="lazy"></span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2000</mark></span><span>Discovered <mark>Tibor Kalman</mark></span><img class="pic" src="img/about-tibor.jpg" alt="Tibor Kalman: Perverse Optimist" loading="lazy"></li>
+        <li><span class="yr">1999–2004</span><span>Early career — intern at <mark>Nylon</mark>; producer and agent for <mark>Estevan Oriol</mark>, <mark>Mister Cartoon</mark>, <mark>Kevin Kerslake</mark>; Creative Director, <mark>Freshjive</mark></span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1996–2004</mark></span><span><mark>Self-directed education</mark> across Art Center, UCLA, LACC, SMC, Pierce</span><img class="pic" src="img/about-trailer.jpg" alt="On a train" loading="lazy"></li>
+        <li><span class="yr">1996</span><span>Studio Wardrobe Dept, iconic LA vintage archive</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1995–1998</mark></span><span>Repped by Dragon Talent Agency; formative cultural immersion</span><img class="pic" src="img/about-dragon.jpg" alt="Dragon Talent card" loading="lazy"></li>
+        <li><span class="yr">1995</span><span><mark>Graduated SOCES</mark>, a GATE high school, at 15</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1988</mark></span><span>Discovered <mark>Benjamin Franklin</mark></span><img class="pic" src="img/about-franklin.jpg" alt="Join, or Die — Benjamin Franklin, 1754" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1986</mark></span><span>Entered <mark>GATE</mark>; learned to code, communicate, create</span><img class="pic" src="img/about-kid.jpg" alt="Arms crossed" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1985–1989</mark></span><span>Read every <mark>Choose Your Own Adventure</mark> book and ending</span><img class="pic" src="img/about-horse.jpg" alt="On a horse" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1979–1997</mark></span><span>Raised on an 1880 family homestead, <mark>Angeles National Forest</mark></span><img class="pic" src="img/about-adobe.jpg" alt="The homestead" loading="lazy"></li>
+        <li><span class="yr">10/31/1979</span><span>Born at sunset in LA on Halloween. Named <mark>“Siri”</mark> backwards.</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>Parents</mark></span><span>Self portrait</span><img class="pic" src="img/about-parents.jpg" alt="Her parents" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>Grandparents</mark></span><span>Mexican and Californian</span><span class="pair"><img class="pic" src="img/about-elders-2.jpg" alt="Mexican grandparents" loading="lazy"><img class="pic" src="img/about-elders-1.jpg" alt="Californian grandparents" loading="lazy"></span></li>
+    </ol>
+</section>
+
+<section id="creative-direction">
+    <div class="head">
+        <h2>Creative Direction</h2>
+        <p>I started at Freshjive with Rick Klotz, where I also made The Propagandist,
+        the label's own publication. Then I joined American Apparel in my early twenties
+        and ended up Global Creative Director, running the look across e-commerce, retail
+        and wholesale with a team of sixty, while the company grew into a $750 million
+        public company. High-waisted jeans, plunging v-necks, a certain unbothered
+        nudity — for better or worse, that became the visual language of a decade.</p>
+    </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://www.nytimes.com/2016/11/13/fashion/iris-alonzo-american-apparel-everybody.html" target="_blank" rel="noopener">American Apparel</a><span class="when">Global Creative Director 2004–2015</span></h3>
+            <figure><img src="img/aa-dupasquier.jpg" alt="Nathalie Du Pasquier for American Apparel, poster" loading="lazy"><figcaption>Nathalie Du Pasquier for American Apparel — the collaboration poster</figcaption></figure>
+            <figure><img src="img/aa-dupasquier-poster.jpg" alt="Nathalie Du Pasquier for American Apparel" loading="lazy"><figcaption>Du Pasquier's grid dress, shot for the campaign</figcaption></figure>
+            <figure><img src="img/aa-dupasquier-floor.jpg" alt="Nathalie Du Pasquier at work" loading="lazy"><figcaption>Nathalie Du Pasquier laying out prints by hand</figcaption></figure>
+            <figure><img src="img/aa-nina.jpg" alt="Du Pasquier print, illustrated" loading="lazy"><figcaption>A Du Pasquier print, drawn back into an illustration</figcaption></figure>
+            <figure><img src="img/aa-deepv.jpg" alt="The Deep V." loading="lazy"><figcaption>The Deep V — the t-shirt that defined a decade of shoulders</figcaption></figure>
+            <figure><img src="img/aa-workout.jpg" alt="Work Out." loading="lazy"><figcaption>Work Out — in-house, shot and printed in Los Angeles</figcaption></figure>
+            <figure><img src="img/aa-editorial.jpg" alt="Editorial" loading="lazy"><figcaption>Editorial, shot on the factory floor downtown</figcaption></figure>
+            <figure><img src="img/aa-window.jpg" alt="Window display" loading="lazy"><figcaption>A store window, dressed in-house</figcaption></figure>
+            <figure><img src="img/aa-party.jpg" alt="At a party" loading="lazy"><figcaption>A party, somewhere in the middle of it</figcaption></figure>
+            <figure><a href="https://www.nytimes.com/2016/11/13/fashion/iris-alonzo-american-apparel-everybody.html" target="_blank" rel="noopener"><img src="img/aa-nyt.jpg" alt="There Is Life After American Apparel, The New York Times" loading="lazy"></a></figure>
+            <figure><img src="img/aa-dress.jpg" alt="Dress against a mushroom cloud" loading="lazy"><figcaption>A dress in front of a mushroom cloud</figcaption></figure>
+            <figure><img src="img/aa-vivaradio.jpg" alt="Viva Radio tee in the fabric warehouse" loading="lazy"><figcaption>A Viva Radio tee, worn in the fabric warehouse</figcaption></figure>
+            <figure><img src="img/aa-vivablog.jpg" alt="Viva Radio" loading="lazy"><figcaption>Viva Radio — the station that ran out of the building</figcaption></figure>
+            <figure><img src="img/aa-vivalogo.jpg" alt="Viva Radio logo" loading="lazy"><figcaption>The Viva Radio mark</figcaption></figure>
+            <figure><img src="img/aa-mayo.jpg" alt="Mexico City Monthly, May 2006" loading="lazy"><figcaption>Mexico City Monthly, May 2006 — our free newspaper</figcaption></figure>
+            <figure><img src="img/aa-vb72.jpg" alt="VB72 — Vanessa Beecroft invitation" loading="lazy"><figcaption>VB72 — Vanessa Beecroft's performance in Miami, 2013</figcaption></figure>
+        </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://www.thesedaysla.com/products/the-freshjive-propagandist" target="_blank" rel="noopener">Freshjive</a><span class="when">Creative Director 2001–2003</span></h3>
+            <figure><img src="img/fj-tee.jpg" alt="Happy Sausage Happy Life" loading="lazy"><figcaption>Happy Sausage Happy Life</figcaption></figure>
+            <figure><img src="img/fj-propagandist-cover.jpg" alt="The Freshjive Propagandist" loading="lazy"><figcaption>The Freshjive Propagandist — the label's own publication</figcaption></figure>
+            <figure><img src="img/fj-propagandist-1.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
+            <figure><img src="img/fj-propagandist-2.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
+            <figure><img src="img/fj-propagandist-3.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
+            <figure><img src="img/fj-propagandist-set.jpg" alt="The Freshjive Propagandist, complete" loading="lazy"><figcaption>The Propagandist, complete in its case</figcaption></figure>
+        </div>
+</section>
+
+<section id="founding">
+    <div class="head">
+        <h2>Founding</h2>
+        <p>I keep starting companies on the same premise: what you need already
+        exists, it's just in the wrong hands.</p>
+        <p>Everybody.World came from one question — what does a brand look like if it
+        actually accounts for the people who sew the clothes and the material they're made
+        from? We printed our costs on the label, never bought an ad, grew from a $100,000
+        seed to $6 million a year, and made what we believe was the first 100% recycled
+        cotton. 1000.world is the consultancy. ENORME is bringing back Ettore Sottsass's
+        Memphis-era industrial design, 500 telephones at a time. iris.market is the
+        current one: use what you have to get what you need.</p>
+    </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a><span class="when">Co-founder 2016–2025</span></h3>
+            <figure><img src="img/ew-label.jpg" alt="Everybody for Luaka Bop label" loading="lazy"><figcaption>Everybody for Luaka Bop — costs printed on the label</figcaption></figure>
+            <figure><img src="img/ew-sewing.jpg" alt="Sewing the label" loading="lazy"><figcaption>That label, going on, in the factory here</figcaption></figure>
+            <figure><img src="img/ew-hangtags.jpg" alt="Hangtags" loading="lazy"><figcaption>Hangtags</figcaption></figure>
+            <figure><img src="img/ew-bales.jpg" alt="Bales of discarded cotton" loading="lazy"><figcaption>Baled cotton waste — the raw material for Trash Tee yarn</figcaption></figure>
+            <figure><img src="img/ew-bag.jpg" alt="The Everybody reusable bag" loading="lazy"><figcaption>The reusable bag</figcaption></figure>
+            <figure><img src="img/ew-sky.jpg" alt="Yellow bag against the sky" loading="lazy"><figcaption>The yellow bag, held up against the sky</figcaption></figure>
+            <figure><img src="img/ew-lake.jpg" alt="The lake" loading="lazy"><figcaption>MacArthur Park, across the lake from the office</figcaption></figure>
+            <figure><img src="img/ew-statue.jpg" alt="Statue in the park" loading="lazy"><figcaption>The statue in the park, wearing a sandal</figcaption></figure>
+            <figure><img src="img/ew-tree.jpg" alt="Tree" loading="lazy"><figcaption>A tree in the park, dressed</figcaption></figure>
+            <figure><img src="img/ew-bench.jpg" alt="Bench" loading="lazy"><figcaption>A park bench, with a hat on it</figcaption></figure>
+            <figure><img src="img/ew-steps.jpg" alt="On the steps" loading="lazy"><figcaption>On the steps, with the bag</figcaption></figure>
+            <figure><img src="img/ew-tote.jpg" alt="Orange tote on the street" loading="lazy"><figcaption>The orange tote, carried down the street</figcaption></figure>
+            <figure><img src="img/ew-jumpsuit.jpg" alt="Jumpsuit, dollar store" loading="lazy"><figcaption>The jumpsuit, in a dollar store</figcaption></figure>
+            <figure><img src="img/ew-jumpsuit-flat.jpg" alt="Jumpsuit and its sketch" loading="lazy"><figcaption>The jumpsuit flat, next to the drawing it came from</figcaption></figure>
+            <figure><img src="img/ew-girlstalk.jpg" alt="Girls Talk packaging" loading="lazy"><figcaption>Girls Talk packaging, with Kiki Kudo</figcaption></figure>
+            <figure><img src="img/about-texts.jpg" alt="Texts with Kiki Kudo" loading="lazy"><figcaption>Kiki Kudo and me, working out a black dress over text</figcaption></figure>
+            <figure><img src="img/ew-burrichter.jpg" alt="Everybody.World by Felix Burrichter" loading="lazy"><figcaption>Everybody.World by Felix Burrichter — 100% recycled cotton</figcaption></figure>
+            <figure><img src="img/ew-shop.jpg" alt="Informal shop at The Standard, downtown LA" loading="lazy"><figcaption>The informal shop at The Standard, downtown LA</figcaption></figure>
+            <figure><img src="img/ew-aboutus.jpg" alt="About Us" loading="lazy"><figcaption>About Us — chess in MacArthur Park</figcaption></figure>
+            <figure><img src="img/ew-prakash.jpg" alt="Prakash" loading="lazy"><figcaption>Shot by Prakash, day four</figcaption></figure>
+            <figure><img src="img/ew-boxes.jpg" alt="Boxes marked IRIS" loading="lazy"><figcaption>Boxes marked IRIS, in the warehouse</figcaption></figure>
+            <figure><img src="img/ew-wall.jpg" alt="The photo wall" loading="lazy"><figcaption>The wall — every shoot, pinned up</figcaption></figure>
+            <figure><img src="img/ew-store.jpg" alt="The store" loading="lazy"><figcaption>The store</figcaption></figure>
+            <figure><img src="img/ew-warehouse.jpg" alt="The warehouse" loading="lazy"><figcaption>The warehouse, load-in</figcaption></figure>
+            <figure><img src="img/ew-march.jpg" alt="A march downtown" loading="lazy"><figcaption>A march downtown</figcaption></figure>
+        </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://news.artnet.com/art-world/ettore-sottsass-enorme-telephone-sale-2625788" target="_blank" rel="noopener">ENORME</a><span class="when">Co-founder and CEO 2025— · Ettore Sottsass, 1985</span></h3>
+            <figure><img src="img/en-phones.jpg" alt="Three ENORME telephones" loading="lazy"><figcaption>Three ENORME telephones, sealed since 1985</figcaption></figure>
+            <figure><img src="img/en-design.jpg" alt="ENORME telephone on a design magazine" loading="lazy"><figcaption>The telephone, on the magazine that first ran it</figcaption></figure>
+            <figure><img src="img/en-envelope.jpg" alt="ENORME envelope" loading="lazy"><figcaption>The original ENORME envelope</figcaption></figure>
+            <figure><img src="img/en-cards.jpg" alt="ENORME business cards" loading="lazy"><figcaption>ENORME Corporation business cards, found with the stock</figcaption></figure>
+            <figure><img src="img/en-grid.jpg" alt="ENORME advertising grid" loading="lazy"><figcaption>The original ENORME advertising</figcaption></figure>
+            <figure><img src="img/en-statement.jpg" alt="Statement by Marco Zanini, 2025" loading="lazy"><figcaption>Marco Zanini on the revival, 2025</figcaption></figure>
+        </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://www.instagram.com/macarthurparkps" target="_blank" rel="noopener">MacArthur Park Preservation Society</a></h3>
+            <figure><img src="img/mp-relief.jpg" alt="Carved relief" loading="lazy"><figcaption>Carved relief in the park</figcaption></figure>
+            <figure><img src="img/mp-chess.jpg" alt="Chess in the park" loading="lazy"><figcaption>Chess, every afternoon</figcaption></figure>
+            <figure><img src="img/mp-metro.jpg" alt="Westlake / MacArthur Park station" loading="lazy"><figcaption>Westlake / MacArthur Park station</figcaption></figure>
+            <figure><img src="img/mp-westlake.jpg" alt="Westlake Theatre" loading="lazy"><figcaption>The Westlake Theatre, 1926, still standing</figcaption></figure>
+            <figure><img src="img/mp-swapmeet.jpg" alt="Swap meet" loading="lazy"><figcaption>The swap meet on Alvarado</figcaption></figure>
+        </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://greatercalifornia.com" target="_blank" rel="noopener">Greater California</a><span class="when"><a href="https://docs.google.com/document/d/1b3_H-V-SxcNWA2ZEpdSzvx1Irpfqnu-Zj3sU1ORVxOg/edit?tab=t.0" target="_blank" rel="noopener">Restricted folder</a></span></h3>
+        </div>
+</section>
+
+<section id="advisory">
+    <div class="head">
+        <h2>Advisory &amp; Collaborations</h2>
+        <p>I'm the person people call. Sometimes that's advice, sometimes it's
+        making the thing together — with Felix Burrichter, Jop van Bennekom, Danielle
+        Levitt, Jean Pigozzi, Nathalie Du Pasquier, Vanessa Beecroft.</p>
+    </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://www.fastcompany.com/91357945/billie-eilish-umg-bravado-recycle-concert-merchandise" target="_blank" rel="noopener">Billie Eilish</a><span class="when">Recycled concert merch, UMG / Bravado</span></h3>
+            <figure><img src="img/be-tee.jpg" alt="Hit Me Hard And Soft, upcycled tee" loading="lazy"><figcaption>Hit Me Hard And Soft — upcycled from unsold tour stock</figcaption></figure>
+            <figure><img src="img/be-story.jpg" alt="Billie Eilish × Iris Alonzo" loading="lazy"><figcaption>Billie Eilish × Iris Alonzo</figcaption></figure>
+        </div>
+</section>
+
+<section id="contact">
+    <div class="head">
+        <h2><a href="mailto:iris@1000.world?subject=HIRIS">iris@1000.world</a></h2>
+        <p>Los Angeles, California.</p>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <span>© 2026</span>
+    <span>1000, LLC</span>
+    <span>All rights reserved</span>
+    <span>Buckminster Fuller photograph by Dan Lindsay, CC BY 3.0</span>
+    <span>Andy Kaufman photograph by Bernard Gotfryd</span>
+    <span>Everybody.World portrait by Camraface for Office Magazine</span>
+</footer>
+
+<script>
+const links = [...document.querySelectorAll('nav a')];
+const seen = new Map();
+const io = new IntersectionObserver(entries => {
+    entries.forEach(e => seen.set(e.target.id, e.intersectionRatio));
+    let best = null, top = 0;
+    seen.forEach((ratio, id) => { if (ratio > top) { top = ratio; best = id; } });
+    links.forEach(a => a.setAttribute('aria-current', String(a.hash === '#' + best)));
+}, { rootMargin: '-140px 0px -45% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+document.querySelectorAll('main section').forEach(s => io.observe(s));
+
+// a row in the right-hand column opens its picture on the left
+const record = document.querySelector('.record');
+const place = () => {
+    document.documentElement.style.setProperty('--bar',
+        Math.round(document.querySelector('header').getBoundingClientRect().height) + 'px');
+    const box = record.getBoundingClientRect();
+    record.querySelectorAll('.haspic').forEach(r =>
+        r.classList.toggle('flip', r.getBoundingClientRect().left - box.left > box.width / 2 - 1));
+};
+place();
+addEventListener('resize', place);
+
+// one tap shows them all on a phone
+const showpics = document.querySelector('.showpics');
+showpics.addEventListener('click', () => {
+    showpics.textContent = record.classList.toggle('open') ? 'Hide images' : 'Show images';
+});
+
+</script>
+
+</body>
+</html>
