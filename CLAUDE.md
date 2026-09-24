@@ -38,11 +38,16 @@ Namecheap shared hosting on 2026-09-17.
 | CNAME `www` | `irissiri2.github.io` | redirects to the apex |
 | MX | `smtp.google.com` | **Never touch.** Runs iris@1000.world. |
 | TXT `@` | `v=spf1 include:_spf.google.com ~all` | |
-| TXT `_dmarc` | `v=DMARC1; p=none; rua=mailto:iris@1000.world; fo=1` | monitor-only; tighten to `p=quarantine` after clean reports |
-| TXT `google._domainkey` | DKIM, pre-existing | |
+| TXT `_dmarc` | `v=DMARC1; p=quarantine` | **No `rua` on purpose.** Reporting was removed 2026-09-24 — Iris does not want the daily reports. Don't re-add it as if it were missing. |
+| TXT `google._domainkey` | DKIM, 2048-bit, selector `google` | Authenticated in Google Admin 2026-09-19. The published key matches the one in Admin — **never click GENERATE NEW RECORD**, it mints a new key and invalidates this record. |
 | CNAME `mail`, `autodiscover` | Register.com mail infra | leave alone |
 
 There is no wildcard A record, deliberately. A new subdomain needs its own record.
+
+Mail from Google passes SPF and DKIM. Big-company mail gateways (UMG's, for one)
+rewrite messages in transit and break the DKIM signature — those DMARC failures are
+normal and not worth chasing. `p=quarantine`, not `p=reject`: a mangled message
+should land in spam, not vanish.
 
 **Known quirk:** Register.com's two nameservers (dns101/dns102) served different
 answers for hours after the 2026-09-17 edits while reporting the same zone
