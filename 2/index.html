@@ -246,8 +246,33 @@ section:last-of-type { border-bottom: 0; }
     max-width: 100%;
 }
 
-#contact h2 a { text-decoration: none; background: var(--hi); padding: 0 .08em; }
-#contact h2 a:hover { background: var(--ink); color: var(--hi); }
+
+.head h2 a { color: var(--ink); text-decoration: none; background: var(--hi); box-decoration-break: clone; -webkit-box-decoration-break: clone; padding: 0 .08em; }
+.head h2 a:hover { background: var(--ink); color: var(--hi); }
+.head h2 .when {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.head h2 .when a { background: none; padding: 0; }
+.head h2 .when a:hover { background: var(--hi); color: var(--ink); }
+.cluster .line { flex: 0 0 100%; margin: 0; max-width: 56ch; font-size: clamp(15px, 1.5vw, 18px); }
+
+/* double-cell: twice the row height */
+.cluster.big { --row: clamp(300px, 38vw, 520px); gap: 16px; }
+
+/* bylined: the caption sits under the picture, always */
+.cluster.bylined figure { display: flex; flex-direction: column; }
+.cluster.bylined figcaption {
+    position: static;
+    padding: 6px 0 0;
+    background: none;
+    opacity: 1;
+    max-width: 34ch;
+}
 
 footer {
     padding: 40px 28px 56px;
@@ -269,6 +294,7 @@ footer {
     section { padding: 48px 0; }
     .head { margin-bottom: 26px; }
     .cluster { gap: 8px; margin-bottom: 40px; }
+    .cluster.big { --row: 220px; gap: 10px; }
     .ribbon { --row: 92px; gap: 6px; }
     .record { columns: 1; }
     .showpics { display: block; }
@@ -302,16 +328,154 @@ footer {
     </div>
     <nav>
         <ol>
+            <li><a href="#iris-market">iris.market</a></li>
+            <li><a href="#enorme">ENORME</a></li>
+            <li><a href="#billie-eilish">Billie Eilish</a></li>
+            <li><a href="#everybody-world">Everybody.World</a></li>
+            <li><a href="#macarthur-park">MacArthur Park</a></li>
+            <li><a href="#american-apparel">American Apparel</a></li>
+            <li><a href="#freshjive">Freshjive</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#creative-direction">Creative Direction</a></li>
-            <li><a href="#founding">Founding</a></li>
-            <li><a href="#advisory">Advisory &amp; Collaborations</a></li>
             <li><a href="#contact">Contact</a></li>
         </ol>
     </nav>
 </header>
 
 <main>
+
+<section id="iris-market">
+    <div class="head">
+        <h2><a href="https://iris.market" target="_blank" rel="noopener">iris.market</a><span class="when">Founder 2025—</span></h2>
+        <p>Use what you have to get what you need. A needs and resources matching platform.</p>
+    </div>
+        <div class="cluster big">
+        </div>
+</section>
+
+<section id="enorme">
+    <div class="head">
+        <h2><a href="https://enormecorp.com" target="_blank" rel="noopener">ENORME</a><span class="when">Co-founder and CEO 2025— · Ettore Sottsass, 1985</span></h2>
+        <p>ENORME is bringing back Ettore Sottsass's Memphis-era industrial design, 500 telephones at a time.</p>
+    </div>
+        <div class="cluster big">
+            <figure><img src="img/en-phones.jpg" alt="Three ENORME telephones" loading="lazy"><figcaption>Three ENORME telephones, sealed since 1985</figcaption></figure>
+            <figure><img src="img/en-design.jpg" alt="ENORME telephone on a design magazine" loading="lazy"><figcaption>The telephone, on the magazine that first ran it</figcaption></figure>
+            <figure><img src="img/en-envelope.jpg" alt="ENORME envelope" loading="lazy"><figcaption>The original ENORME envelope</figcaption></figure>
+            <figure><img src="img/en-cards.jpg" alt="ENORME business cards" loading="lazy"><figcaption>ENORME Corporation business cards, found with the stock</figcaption></figure>
+            <figure><img src="img/en-grid.jpg" alt="ENORME advertising grid" loading="lazy"><figcaption>The original ENORME advertising</figcaption></figure>
+            <figure><img src="img/en-statement.jpg" alt="Statement by Marco Zanini, 2025" loading="lazy"><figcaption>Marco Zanini on the revival, 2025</figcaption></figure>
+        </div>
+</section>
+
+<section id="billie-eilish">
+    <div class="head">
+        <h2><a href="https://www.fastcompany.com/91357945/billie-eilish-umg-bravado-recycle-concert-merchandise" target="_blank" rel="noopener">Billie Eilish</a><span class="when">Recycled concert merch, UMG / Bravado</span></h2>
+        <p>I'm the person people call. Sometimes that's advice, sometimes it's
+        making the thing together — with Felix Burrichter, Jop van Bennekom, Danielle
+        Levitt, Jean Pigozzi, Nathalie Du Pasquier, Vanessa Beecroft.</p>
+    </div>
+        <div class="cluster big">
+            <figure><img src="img/be-tee.jpg" alt="Hit Me Hard And Soft, upcycled tee" loading="lazy"><figcaption>Hit Me Hard And Soft — upcycled from unsold tour stock</figcaption></figure>
+            <figure><img src="img/be-story.jpg" alt="Billie Eilish × Iris Alonzo" loading="lazy"><figcaption>Billie Eilish × Iris Alonzo</figcaption></figure>
+        </div>
+</section>
+
+<section id="everybody-world">
+    <div class="head">
+        <h2><a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a><span class="when">Co-founder and Creative Director 2016–2025</span></h2>
+        <p>I keep starting companies on the same premise: what you need already
+        exists, it's just in the wrong hands.</p>
+        <p>Everybody.World came from one question — what does a brand look like if it
+        actually accounts for the people who sew the clothes and the material they're made
+        from? We printed our costs on the label, never bought an ad, grew from a $100,000
+        seed to $6 million a year, and made what we believe was the first 100% recycled
+        cotton. 1000.world is the consultancy. ENORME is bringing back Ettore Sottsass's
+        Memphis-era industrial design, 500 telephones at a time. iris.market is the
+        current one: use what you have to get what you need.</p>
+    </div>
+        <div class="cluster big bylined">
+            <figure><img src="img/ew-label.jpg" alt="Everybody for Luaka Bop label" loading="lazy"><figcaption>Everybody for Luaka Bop — costs printed on the label</figcaption></figure>
+            <figure><img src="img/ew-sewing.jpg" alt="Sewing the label" loading="lazy"><figcaption>That label, going on, in the factory here</figcaption></figure>
+            <figure><img src="img/ew-bales.jpg" alt="Bales of discarded cotton" loading="lazy"><figcaption>Baled cotton waste — the raw material for Trash Tee yarn</figcaption></figure>
+            <figure><img src="img/ew-burrichter.jpg" alt="Everybody.World by Felix Burrichter" loading="lazy"><figcaption>Everybody.World by Felix Burrichter — 100% recycled cotton</figcaption></figure>
+            <figure><img src="img/ew-jumpsuit.jpg" alt="Jumpsuit, dollar store" loading="lazy"><figcaption>The jumpsuit, in a dollar store</figcaption></figure>
+            <figure><img src="img/ew-jumpsuit-flat.jpg" alt="Jumpsuit and its sketch" loading="lazy"><figcaption>The jumpsuit flat, next to the drawing it came from</figcaption></figure>
+            <figure><img src="img/ew-bag.jpg" alt="The Everybody reusable bag" loading="lazy"><figcaption>The reusable bag</figcaption></figure>
+            <figure><img src="img/ew-sky.jpg" alt="Yellow bag against the sky" loading="lazy"><figcaption>The yellow bag, held up against the sky</figcaption></figure>
+            <figure><img src="img/ew-girlstalk.jpg" alt="Girls Talk packaging" loading="lazy"><figcaption>Girls Talk packaging, with Kiki Kudo</figcaption></figure>
+            <figure><img src="img/ew-shop.jpg" alt="Informal shop at The Standard, downtown LA" loading="lazy"><figcaption>The informal shop at The Standard, downtown LA</figcaption></figure>
+            <figure><img src="img/ew-aboutus.jpg" alt="About Us" loading="lazy"><figcaption>About Us — chess in MacArthur Park</figcaption></figure>
+            <figure><img src="img/ew-wall.jpg" alt="The photo wall" loading="lazy"><figcaption>The wall — every shoot, pinned up</figcaption></figure>
+            <figure><img src="img/ew-store.jpg" alt="The store" loading="lazy"><figcaption>The store</figcaption></figure>
+            <figure><img src="img/ew-march.jpg" alt="A march downtown" loading="lazy"><figcaption>A march downtown</figcaption></figure>
+        </div>
+        <div class="cluster">
+            <h3 class="tag"><a href="https://greatercalifornia.com" target="_blank" rel="noopener">Greater California</a><span class="when"><a href="https://docs.google.com/document/d/1b3_H-V-SxcNWA2ZEpdSzvx1Irpfqnu-Zj3sU1ORVxOg/edit?tab=t.0" target="_blank" rel="noopener">Restricted folder</a></span></h3>
+            <p class="line">GREATER CALIFORNIA LINE TO COME</p>
+        </div>
+</section>
+
+<section id="macarthur-park">
+    <div class="head">
+        <h2><a href="https://www.instagram.com/macarthurparkps" target="_blank" rel="noopener">MacArthur Park Preservation Society</a></h2>
+        <p>A neighborhood group for the park across the street from the Everybody.World office. Board member, Levitt Los Angeles, four years.</p>
+    </div>
+        <div class="cluster">
+            <figure><img src="img/mp-relief.jpg" alt="Carved relief" loading="lazy"><figcaption>Carved relief in the park</figcaption></figure>
+            <figure><img src="img/mp-chess.jpg" alt="Chess in the park" loading="lazy"><figcaption>Chess, every afternoon</figcaption></figure>
+            <figure><img src="img/mp-metro.jpg" alt="Westlake / MacArthur Park station" loading="lazy"><figcaption>Westlake / MacArthur Park station</figcaption></figure>
+            <figure><img src="img/mp-westlake.jpg" alt="Westlake Theatre" loading="lazy"><figcaption>The Westlake Theatre, 1926, still standing</figcaption></figure>
+            <figure><img src="img/mp-swapmeet.jpg" alt="Swap meet" loading="lazy"><figcaption>The swap meet on Alvarado</figcaption></figure>
+        </div>
+</section>
+
+<section id="american-apparel">
+    <div class="head">
+        <h2><a href="https://www.nytimes.com/2016/11/13/fashion/iris-alonzo-american-apparel-everybody.html" target="_blank" rel="noopener">American Apparel</a><span class="when">Global Creative Director 2004–2015</span></h2>
+        <p>I started at Freshjive with Rick Klotz, where I also made The Propagandist,
+        the label's own publication. Then I joined American Apparel in my early twenties
+        and ended up Global Creative Director, running the look across e-commerce, retail
+        and wholesale with a team of sixty, while the company grew into a $750 million
+        public company. High-waisted jeans, plunging v-necks, a certain unbothered
+        nudity — for better or worse, that became the visual language of a decade.</p>
+    </div>
+        <div class="cluster">
+            <figure><img src="img/aa-dupasquier.jpg" alt="Nathalie Du Pasquier for American Apparel, poster" loading="lazy"><figcaption>Nathalie Du Pasquier for American Apparel — the collaboration poster</figcaption></figure>
+            <figure><img src="img/aa-dupasquier-floor.jpg" alt="Nathalie Du Pasquier at work" loading="lazy"><figcaption>Nathalie Du Pasquier laying out prints by hand</figcaption></figure>
+            <figure><img src="img/aa-deepv.jpg" alt="The Deep V." loading="lazy"><figcaption>The Deep V — the t-shirt that defined a decade of shoulders</figcaption></figure>
+            <figure><img src="img/aa-workout.jpg" alt="Work Out." loading="lazy"><figcaption>Work Out — in-house, shot and printed in Los Angeles</figcaption></figure>
+            <figure><img src="img/aa-legalize-la-poster.jpg" alt="Legalize LA" loading="lazy"><figcaption>Legalize LA — the newspaper insert</figcaption></figure>
+            <figure><img src="img/aa-legalize-la-march.jpg" alt="Legalize LA march" loading="lazy"><figcaption>Legalize LA, May Day march downtown</figcaption></figure>
+            <figure><img src="img/aa-sweatshop-free.jpg" alt="Made in USA, Sweatshop Free" loading="lazy"><figcaption>Made in USA, Sweatshop Free — the full-page ad</figcaption></figure>
+            <figure><img src="img/aa-lohan-hoodie.jpg" alt="Lindsay Lohan in the Flex Fleece hoodie" loading="lazy"><figcaption>Lindsay Lohan in the Flex Fleece zip hoodie</figcaption></figure>
+            <figure><img src="img/aa-bieber-hoodie.jpg" alt="Justin Bieber in the purple Flex Fleece hoodie" loading="lazy"><figcaption>Justin Bieber in the purple Flex Fleece hoodie</figcaption></figure>
+            <figure><img src="img/aa-butt-towel.jpg" alt="BUTT Magazine beach towel" loading="lazy"><figcaption>BUTT Magazine × American Apparel beach towels, 2010</figcaption></figure>
+            <figure><img src="img/aa-editorial.jpg" alt="Editorial" loading="lazy"><figcaption>Editorial, shot on the factory floor downtown</figcaption></figure>
+            <figure><img src="img/aa-window.jpg" alt="Window display" loading="lazy"><figcaption>A store window, dressed in-house</figcaption></figure>
+            <figure><img src="img/aa-party.jpg" alt="At a party" loading="lazy"><figcaption>A party, somewhere in the middle of it</figcaption></figure>
+            <figure><a href="https://www.nytimes.com/2016/11/13/fashion/iris-alonzo-american-apparel-everybody.html" target="_blank" rel="noopener"><img src="img/aa-nyt.jpg" alt="There Is Life After American Apparel, The New York Times" loading="lazy"></a></figure>
+            <figure><img src="img/aa-dress.jpg" alt="Dress against a mushroom cloud" loading="lazy"><figcaption>A dress in front of a mushroom cloud</figcaption></figure>
+            <figure><img src="img/aa-vivaradio.jpg" alt="Viva Radio tee in the fabric warehouse" loading="lazy"><figcaption>A Viva Radio tee, worn in the fabric warehouse</figcaption></figure>
+            <figure><img src="img/aa-vivablog.jpg" alt="Viva Radio" loading="lazy"><figcaption>Viva Radio — the station that ran out of the building</figcaption></figure>
+            <figure><img src="img/aa-vivalogo.jpg" alt="Viva Radio logo" loading="lazy"><figcaption>The Viva Radio mark</figcaption></figure>
+            <figure><img src="img/aa-mayo.jpg" alt="Mexico City Monthly, May 2006" loading="lazy"><figcaption>Mexico City Monthly, May 2006 — our free newspaper</figcaption></figure>
+            <figure><img src="img/aa-vb72.jpg" alt="VB72 — Vanessa Beecroft invitation" loading="lazy"><figcaption>VB72 — Vanessa Beecroft's performance in Miami, 2013</figcaption></figure>
+        </div>
+</section>
+
+<section id="freshjive">
+    <div class="head">
+        <h2><a href="https://www.thesedaysla.com/products/the-freshjive-propagandist" target="_blank" rel="noopener">Freshjive</a><span class="when">Creative Director 2001–2003</span></h2>
+    </div>
+        <div class="cluster">
+            <figure><img src="img/fj-tee.jpg" alt="Happy Sausage Happy Life" loading="lazy"><figcaption>Happy Sausage Happy Life</figcaption></figure>
+            <figure><img src="img/fj-propagandist-cover.jpg" alt="The Freshjive Propagandist" loading="lazy"><figcaption>The Freshjive Propagandist — the label's own publication</figcaption></figure>
+            <figure><img src="img/fj-propagandist-1.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
+            <figure><img src="img/fj-propagandist-2.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
+            <figure><img src="img/fj-propagandist-3.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
+            <figure><img src="img/fj-propagandist-set.jpg" alt="The Freshjive Propagandist, complete" loading="lazy"><figcaption>The Propagandist, complete in its case</figcaption></figure>
+        </div>
+</section>
 
 <section id="about">
     <div class="head">
@@ -323,7 +487,6 @@ footer {
     </div>
     <button class="showpics" type="button">Show images</button>
     <ol class="record">
-        <li><span class="yr">2026</span><span>Creative Direction, leading the <mark>California gubernatorial campaign</mark></span></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Founder, <mark>1000.world</mark> — interdisciplinary consulting parent company</span><img class="pic" src="../Iris2025.jpeg" alt="Iris Alonzo, 2025" loading="lazy"></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>CEO, <a href="https://enormecorp.com" target="_blank" rel="noopener">ENORME</a></span><img class="pic" src="img/about-enorme.jpg" alt="ENORME launch" loading="lazy"></li>
         <li><span class="yr">2025—</span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span></li>
@@ -344,123 +507,6 @@ footer {
         <li class="haspic" tabindex="0"><span class="yr"><mark>Parents</mark></span><span>Self portrait</span><img class="pic" src="img/about-parents.jpg" alt="Her parents" loading="lazy"></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>Grandparents</mark></span><span>Mexican and Californian</span><span class="pair"><img class="pic" src="img/about-elders-2.jpg" alt="Mexican grandparents" loading="lazy"><img class="pic" src="img/about-elders-1.jpg" alt="Californian grandparents" loading="lazy"></span></li>
     </ol>
-</section>
-
-<section id="creative-direction">
-    <div class="head">
-        <h2>Creative Direction</h2>
-        <p>I started at Freshjive with Rick Klotz, where I also made The Propagandist,
-        the label's own publication. Then I joined American Apparel in my early twenties
-        and ended up Global Creative Director, running the look across e-commerce, retail
-        and wholesale with a team of sixty, while the company grew into a $750 million
-        public company. High-waisted jeans, plunging v-necks, a certain unbothered
-        nudity — for better or worse, that became the visual language of a decade.</p>
-    </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://www.nytimes.com/2016/11/13/fashion/iris-alonzo-american-apparel-everybody.html" target="_blank" rel="noopener">American Apparel</a><span class="when">Global Creative Director 2004–2015</span></h3>
-            <figure><img src="img/aa-dupasquier.jpg" alt="Nathalie Du Pasquier for American Apparel, poster" loading="lazy"><figcaption>Nathalie Du Pasquier for American Apparel — the collaboration poster</figcaption></figure>
-            <figure><img src="img/aa-dupasquier-poster.jpg" alt="Nathalie Du Pasquier for American Apparel" loading="lazy"><figcaption>Du Pasquier's grid dress, shot for the campaign</figcaption></figure>
-            <figure><img src="img/aa-dupasquier-floor.jpg" alt="Nathalie Du Pasquier at work" loading="lazy"><figcaption>Nathalie Du Pasquier laying out prints by hand</figcaption></figure>
-            <figure><img src="img/aa-nina.jpg" alt="Du Pasquier print, illustrated" loading="lazy"><figcaption>A Du Pasquier print, drawn back into an illustration</figcaption></figure>
-            <figure><img src="img/aa-deepv.jpg" alt="The Deep V." loading="lazy"><figcaption>The Deep V — the t-shirt that defined a decade of shoulders</figcaption></figure>
-            <figure><img src="img/aa-workout.jpg" alt="Work Out." loading="lazy"><figcaption>Work Out — in-house, shot and printed in Los Angeles</figcaption></figure>
-            <figure><img src="img/aa-editorial.jpg" alt="Editorial" loading="lazy"><figcaption>Editorial, shot on the factory floor downtown</figcaption></figure>
-            <figure><img src="img/aa-window.jpg" alt="Window display" loading="lazy"><figcaption>A store window, dressed in-house</figcaption></figure>
-            <figure><img src="img/aa-party.jpg" alt="At a party" loading="lazy"><figcaption>A party, somewhere in the middle of it</figcaption></figure>
-            <figure><a href="https://www.nytimes.com/2016/11/13/fashion/iris-alonzo-american-apparel-everybody.html" target="_blank" rel="noopener"><img src="img/aa-nyt.jpg" alt="There Is Life After American Apparel, The New York Times" loading="lazy"></a></figure>
-            <figure><img src="img/aa-dress.jpg" alt="Dress against a mushroom cloud" loading="lazy"><figcaption>A dress in front of a mushroom cloud</figcaption></figure>
-            <figure><img src="img/aa-vivaradio.jpg" alt="Viva Radio tee in the fabric warehouse" loading="lazy"><figcaption>A Viva Radio tee, worn in the fabric warehouse</figcaption></figure>
-            <figure><img src="img/aa-vivablog.jpg" alt="Viva Radio" loading="lazy"><figcaption>Viva Radio — the station that ran out of the building</figcaption></figure>
-            <figure><img src="img/aa-vivalogo.jpg" alt="Viva Radio logo" loading="lazy"><figcaption>The Viva Radio mark</figcaption></figure>
-            <figure><img src="img/aa-mayo.jpg" alt="Mexico City Monthly, May 2006" loading="lazy"><figcaption>Mexico City Monthly, May 2006 — our free newspaper</figcaption></figure>
-            <figure><img src="img/aa-vb72.jpg" alt="VB72 — Vanessa Beecroft invitation" loading="lazy"><figcaption>VB72 — Vanessa Beecroft's performance in Miami, 2013</figcaption></figure>
-        </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://www.thesedaysla.com/products/the-freshjive-propagandist" target="_blank" rel="noopener">Freshjive</a><span class="when">Creative Director 2001–2003</span></h3>
-            <figure><img src="img/fj-tee.jpg" alt="Happy Sausage Happy Life" loading="lazy"><figcaption>Happy Sausage Happy Life</figcaption></figure>
-            <figure><img src="img/fj-propagandist-cover.jpg" alt="The Freshjive Propagandist" loading="lazy"><figcaption>The Freshjive Propagandist — the label's own publication</figcaption></figure>
-            <figure><img src="img/fj-propagandist-1.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
-            <figure><img src="img/fj-propagandist-2.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
-            <figure><img src="img/fj-propagandist-3.jpg" alt="The Freshjive Propagandist, spread" loading="lazy"><figcaption>The Propagandist, inside</figcaption></figure>
-            <figure><img src="img/fj-propagandist-set.jpg" alt="The Freshjive Propagandist, complete" loading="lazy"><figcaption>The Propagandist, complete in its case</figcaption></figure>
-        </div>
-</section>
-
-<section id="founding">
-    <div class="head">
-        <h2>Founding</h2>
-        <p>I keep starting companies on the same premise: what you need already
-        exists, it's just in the wrong hands.</p>
-        <p>Everybody.World came from one question — what does a brand look like if it
-        actually accounts for the people who sew the clothes and the material they're made
-        from? We printed our costs on the label, never bought an ad, grew from a $100,000
-        seed to $6 million a year, and made what we believe was the first 100% recycled
-        cotton. 1000.world is the consultancy. ENORME is bringing back Ettore Sottsass's
-        Memphis-era industrial design, 500 telephones at a time. iris.market is the
-        current one: use what you have to get what you need.</p>
-    </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a><span class="when">Co-founder 2016–2025</span></h3>
-            <figure><img src="img/ew-label.jpg" alt="Everybody for Luaka Bop label" loading="lazy"><figcaption>Everybody for Luaka Bop — costs printed on the label</figcaption></figure>
-            <figure><img src="img/ew-sewing.jpg" alt="Sewing the label" loading="lazy"><figcaption>That label, going on, in the factory here</figcaption></figure>
-            <figure><img src="img/ew-hangtags.jpg" alt="Hangtags" loading="lazy"><figcaption>Hangtags</figcaption></figure>
-            <figure><img src="img/ew-bales.jpg" alt="Bales of discarded cotton" loading="lazy"><figcaption>Baled cotton waste — the raw material for Trash Tee yarn</figcaption></figure>
-            <figure><img src="img/ew-bag.jpg" alt="The Everybody reusable bag" loading="lazy"><figcaption>The reusable bag</figcaption></figure>
-            <figure><img src="img/ew-sky.jpg" alt="Yellow bag against the sky" loading="lazy"><figcaption>The yellow bag, held up against the sky</figcaption></figure>
-            <figure><img src="img/ew-lake.jpg" alt="The lake" loading="lazy"><figcaption>MacArthur Park, across the lake from the office</figcaption></figure>
-            <figure><img src="img/ew-statue.jpg" alt="Statue in the park" loading="lazy"><figcaption>The statue in the park, wearing a sandal</figcaption></figure>
-            <figure><img src="img/ew-tree.jpg" alt="Tree" loading="lazy"><figcaption>A tree in the park, dressed</figcaption></figure>
-            <figure><img src="img/ew-bench.jpg" alt="Bench" loading="lazy"><figcaption>A park bench, with a hat on it</figcaption></figure>
-            <figure><img src="img/ew-steps.jpg" alt="On the steps" loading="lazy"><figcaption>On the steps, with the bag</figcaption></figure>
-            <figure><img src="img/ew-tote.jpg" alt="Orange tote on the street" loading="lazy"><figcaption>The orange tote, carried down the street</figcaption></figure>
-            <figure><img src="img/ew-jumpsuit.jpg" alt="Jumpsuit, dollar store" loading="lazy"><figcaption>The jumpsuit, in a dollar store</figcaption></figure>
-            <figure><img src="img/ew-jumpsuit-flat.jpg" alt="Jumpsuit and its sketch" loading="lazy"><figcaption>The jumpsuit flat, next to the drawing it came from</figcaption></figure>
-            <figure><img src="img/ew-girlstalk.jpg" alt="Girls Talk packaging" loading="lazy"><figcaption>Girls Talk packaging, with Kiki Kudo</figcaption></figure>
-            <figure><img src="img/about-texts.jpg" alt="Texts with Kiki Kudo" loading="lazy"><figcaption>Kiki Kudo and me, working out a black dress over text</figcaption></figure>
-            <figure><img src="img/ew-burrichter.jpg" alt="Everybody.World by Felix Burrichter" loading="lazy"><figcaption>Everybody.World by Felix Burrichter — 100% recycled cotton</figcaption></figure>
-            <figure><img src="img/ew-shop.jpg" alt="Informal shop at The Standard, downtown LA" loading="lazy"><figcaption>The informal shop at The Standard, downtown LA</figcaption></figure>
-            <figure><img src="img/ew-aboutus.jpg" alt="About Us" loading="lazy"><figcaption>About Us — chess in MacArthur Park</figcaption></figure>
-            <figure><img src="img/ew-prakash.jpg" alt="Prakash" loading="lazy"><figcaption>Shot by Prakash, day four</figcaption></figure>
-            <figure><img src="img/ew-boxes.jpg" alt="Boxes marked IRIS" loading="lazy"><figcaption>Boxes marked IRIS, in the warehouse</figcaption></figure>
-            <figure><img src="img/ew-wall.jpg" alt="The photo wall" loading="lazy"><figcaption>The wall — every shoot, pinned up</figcaption></figure>
-            <figure><img src="img/ew-store.jpg" alt="The store" loading="lazy"><figcaption>The store</figcaption></figure>
-            <figure><img src="img/ew-warehouse.jpg" alt="The warehouse" loading="lazy"><figcaption>The warehouse, load-in</figcaption></figure>
-            <figure><img src="img/ew-march.jpg" alt="A march downtown" loading="lazy"><figcaption>A march downtown</figcaption></figure>
-        </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://news.artnet.com/art-world/ettore-sottsass-enorme-telephone-sale-2625788" target="_blank" rel="noopener">ENORME</a><span class="when">Co-founder and CEO 2025— · Ettore Sottsass, 1985</span></h3>
-            <figure><img src="img/en-phones.jpg" alt="Three ENORME telephones" loading="lazy"><figcaption>Three ENORME telephones, sealed since 1985</figcaption></figure>
-            <figure><img src="img/en-design.jpg" alt="ENORME telephone on a design magazine" loading="lazy"><figcaption>The telephone, on the magazine that first ran it</figcaption></figure>
-            <figure><img src="img/en-envelope.jpg" alt="ENORME envelope" loading="lazy"><figcaption>The original ENORME envelope</figcaption></figure>
-            <figure><img src="img/en-cards.jpg" alt="ENORME business cards" loading="lazy"><figcaption>ENORME Corporation business cards, found with the stock</figcaption></figure>
-            <figure><img src="img/en-grid.jpg" alt="ENORME advertising grid" loading="lazy"><figcaption>The original ENORME advertising</figcaption></figure>
-            <figure><img src="img/en-statement.jpg" alt="Statement by Marco Zanini, 2025" loading="lazy"><figcaption>Marco Zanini on the revival, 2025</figcaption></figure>
-        </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://www.instagram.com/macarthurparkps" target="_blank" rel="noopener">MacArthur Park Preservation Society</a></h3>
-            <figure><img src="img/mp-relief.jpg" alt="Carved relief" loading="lazy"><figcaption>Carved relief in the park</figcaption></figure>
-            <figure><img src="img/mp-chess.jpg" alt="Chess in the park" loading="lazy"><figcaption>Chess, every afternoon</figcaption></figure>
-            <figure><img src="img/mp-metro.jpg" alt="Westlake / MacArthur Park station" loading="lazy"><figcaption>Westlake / MacArthur Park station</figcaption></figure>
-            <figure><img src="img/mp-westlake.jpg" alt="Westlake Theatre" loading="lazy"><figcaption>The Westlake Theatre, 1926, still standing</figcaption></figure>
-            <figure><img src="img/mp-swapmeet.jpg" alt="Swap meet" loading="lazy"><figcaption>The swap meet on Alvarado</figcaption></figure>
-        </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://greatercalifornia.com" target="_blank" rel="noopener">Greater California</a><span class="when"><a href="https://docs.google.com/document/d/1b3_H-V-SxcNWA2ZEpdSzvx1Irpfqnu-Zj3sU1ORVxOg/edit?tab=t.0" target="_blank" rel="noopener">Restricted folder</a></span></h3>
-        </div>
-</section>
-
-<section id="advisory">
-    <div class="head">
-        <h2>Advisory &amp; Collaborations</h2>
-        <p>I'm the person people call. Sometimes that's advice, sometimes it's
-        making the thing together — with Felix Burrichter, Jop van Bennekom, Danielle
-        Levitt, Jean Pigozzi, Nathalie Du Pasquier, Vanessa Beecroft.</p>
-    </div>
-        <div class="cluster">
-            <h3 class="tag"><a href="https://www.fastcompany.com/91357945/billie-eilish-umg-bravado-recycle-concert-merchandise" target="_blank" rel="noopener">Billie Eilish</a><span class="when">Recycled concert merch, UMG / Bravado</span></h3>
-            <figure><img src="img/be-tee.jpg" alt="Hit Me Hard And Soft, upcycled tee" loading="lazy"><figcaption>Hit Me Hard And Soft — upcycled from unsold tour stock</figcaption></figure>
-            <figure><img src="img/be-story.jpg" alt="Billie Eilish × Iris Alonzo" loading="lazy"><figcaption>Billie Eilish × Iris Alonzo</figcaption></figure>
-        </div>
 </section>
 
 <section id="contact">
