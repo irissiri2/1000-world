@@ -260,7 +260,7 @@ section:last-of-type { border-bottom: 0; }
 .head h2 .when a:hover { background: var(--hi); color: var(--ink); }
 .head p a { color: var(--ink); text-decoration: none; background: var(--hi); padding: 0 .1em; }
 .head p a:hover { background: var(--ink); color: var(--hi); }
-.cluster .film { display: block; height: var(--row); width: auto; max-width: 100%; background: var(--ink); }
+.cluster .film { display: block; height: var(--row); width: auto; max-width: 100%; cursor: pointer; }
 .cluster .line { flex: 0 0 100%; margin: 0; max-width: 56ch; font-size: clamp(15px, 1.5vw, 18px); }
 
 /* long grids show two rows, then a button */
@@ -388,7 +388,7 @@ footer {
         <p><a href="https://iris.market/about" target="_blank" rel="noopener">Learn more and sign up</a></p>
     </div>
         <div class="cluster big">
-            <figure><video class="film" src="img/iris-market-sound.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" controls playsinline preload="metadata"></video></figure>
+            <figure><video class="film" src="img/iris-market-sound.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" playsinline preload="metadata"></video></figure>
         </div>
 </section>
 
@@ -638,6 +638,9 @@ document.querySelectorAll('.record .haspic > video').forEach(v => {
     row.addEventListener('mouseenter', on); row.addEventListener('focus', on);
     row.addEventListener('mouseleave', off); row.addEventListener('blur', off);
 });
+
+// the section video: click to play, click to pause
+document.querySelectorAll('.film').forEach(v => v.addEventListener('click', () => v.paused ? v.play() : v.pause()));
 
 // one tap shows them all on a phone
 const showpics = document.querySelector('.showpics');
