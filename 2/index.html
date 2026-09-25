@@ -642,7 +642,7 @@ const fold = () => clusters.forEach(c => {
         hidden.forEach(f => f.classList.add('folded'));
         const b = document.createElement('button');
         b.type = 'button'; b.className = 'more'; b.textContent = '+' + hidden.length + ' more';
-        b.addEventListener('click', () => { c.dataset.open = '1'; hidden.forEach(f => f.classList.remove('folded')); b.remove(); place(); });
+        b.addEventListener('click', () => { c.dataset.open = '1'; hidden.forEach(f => { f.querySelectorAll('img').forEach(i => { i.loading = 'eager'; i.src = i.getAttribute('src'); }); f.classList.remove('folded'); }); b.remove(); place(); });
         c.appendChild(b);
     }
 });
