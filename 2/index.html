@@ -538,7 +538,7 @@ footer {
     <button class="showpics" type="button">Show images</button>
     <ol class="record">
         <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Founder, <mark>1000.world</mark> — interdisciplinary consulting parent company</span><img class="pic" src="../Iris2025.jpeg" alt="Iris Alonzo, 2025" width="640" height="501" loading="lazy"></li>
-        <li><span class="yr">2025—</span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span><video class="pic" src="img/iris-market.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" muted loop playsinline preload="metadata"></video></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>CEO, <a href="https://enormecorp.com" target="_blank" rel="noopener">ENORME</a></span><img class="pic" src="img/about-enorme.jpg" alt="ENORME launch" width="675" height="900" loading="lazy"></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>2016–2025</mark></span><span>Co-Founder, Creative Director, <a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a></span><img class="pic" src="img/about-office.jpg" alt="Iris Alonzo and Carolina Crespo for Office Magazine, photograph by Camraface" width="816" height="1224" loading="lazy"></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>2004–2015</mark></span><span>Global Creative Director, <mark>American Apparel</mark></span><img class="pic" src="img/about-aa-ad.jpg" alt="Meet Iris. — American Apparel" width="570" height="900" loading="lazy"></li>
@@ -622,10 +622,21 @@ const fold = () => clusters.forEach(c => {
 fold();
 addEventListener('resize', fold);
 
+// the timeline video plays while its row is open
+document.querySelectorAll('.record .haspic > video').forEach(v => {
+    const row = v.parentElement;
+    const on = () => v.play().catch(() => {});
+    const off = () => { v.pause(); v.currentTime = 0; };
+    row.addEventListener('mouseenter', on); row.addEventListener('focus', on);
+    row.addEventListener('mouseleave', off); row.addEventListener('blur', off);
+});
+
 // one tap shows them all on a phone
 const showpics = document.querySelector('.showpics');
 showpics.addEventListener('click', () => {
-    showpics.textContent = record.classList.toggle('open') ? 'Hide images' : 'Show images';
+    const open = record.classList.toggle('open');
+    showpics.textContent = open ? 'Hide images' : 'Show images';
+    record.querySelectorAll('video').forEach(v => open ? v.play().catch(() => {}) : v.pause());
 });
 
 </script>
