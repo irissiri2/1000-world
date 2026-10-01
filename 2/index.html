@@ -316,6 +316,25 @@ section:last-of-type { border-bottom: 0; }
     max-width: 34ch;
 }
 
+/* folded sections: the heading is the switch, a tap opens the rest */
+.fold details { max-width: 1400px; margin: 0 auto; }
+.fold summary { list-style: none; cursor: pointer; width: max-content; max-width: 100%; }
+.fold summary::-webkit-details-marker { display: none; }
+.fold summary h2 {
+    margin: 0;
+    font-size: clamp(24px, 4.4vw, 46px);
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.fold summary h2::after { content: " +"; }
+.fold details[open] summary h2::after { content: " \2212"; }
+.fold summary:hover h2 { background: var(--hi); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.fold details[open] summary { margin-bottom: 44px; }
+.fold .head { margin-left: 0; }
+.fold section { padding: 0 0 76px; border-bottom: 0; }
+.fold section:last-of-type { padding-bottom: 0; }
+
 footer {
     padding: 40px 28px 56px;
     font-size: 11px;
@@ -335,6 +354,8 @@ footer {
     main { padding: 0 18px; }
     section { padding: 48px 0; }
     .head { margin-bottom: 26px; }
+    .fold details[open] summary { margin-bottom: 26px; }
+    .fold section { padding-bottom: 48px; }
     .cluster { gap: 8px; margin-bottom: 40px; }
     .cluster.big { --row: 220px; gap: 10px; }
     .ribbon { --row: 92px; gap: 6px; }
@@ -372,12 +393,9 @@ footer {
         <ol>
             <li><a href="#iris-market">iris.market</a></li>
             <li><a href="#enorme">ENORME</a></li>
-            <li><a href="#everybody-world">Everybody.World</a></li>
-            <li><a href="#american-apparel">American Apparel</a></li>
-            <li><a href="#collaborations">Collaborations</a></li>
-            <li><a href="#freshjive">Freshjive</a></li>
-            <li><a href="#civics">Civics</a></li>
             <li><a href="#about">How I Got Here</a></li>
+            <li><a href="#past-work">Past Work</a></li>
+            <li><a href="#civics">Civics</a></li>
             <li><a href="#contact">Contact</a></li>
         </ol>
     </nav>
@@ -389,12 +407,15 @@ footer {
     <div class="head">
         <p>When I finished high school at fifteen, my mom asked what I wanted to do with
         my life. I said I wanted someone to pay me to have good ideas. She said she didn't
-        think that was a job. I worked my way through publishing, music, film, photography
-        and fashion until I found out it was: creative director. 25 years after first
-        holding the title, I am one today, sort of. Color, form, tactility and quality
-        still matter to me, but I think of them as a given in how anything should be made.
-        Now I bring that thinking to something larger: the systems we live inside, and the
-        creativity underneath them.</p>
+        think that was a job.</p>
+        <p>I went looking for it anyway. In publishing, music, film, photography and fashion.
+        It took me years to realize the job had a name — creative director — and that I'd
+        been doing what I loved all along. Having ideas. The medium just kept changing.</p>
+        <p>Now I'm interested in what an idea can actually do. How it might change the way we
+        connect, help each other and live together.</p>
+        <p>Which is how I find myself building iris.market around the oldest idea in commerce:
+        we're neighbors, I have this, you need that, let's trade. We automated that away.
+        iris.market is my attempt to bring the people back into it.</p>
     </div>
 </section>
 
@@ -432,6 +453,39 @@ footer {
         </div>
 </section>
 
+<section id="about">
+    <div class="head">
+        <h2>How I Got Here</h2>
+    </div>
+    <button class="showpics" type="button">Show images</button>
+    <ol class="record">
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Founder, <mark>1000.world</mark> — interdisciplinary consulting parent company</span><img class="pic" src="../Iris2025.jpeg" alt="Iris Alonzo, 2025" width="640" height="501" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span><video class="pic" src="img/iris-market.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" muted loop playsinline preload="metadata"></video></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>CEO, <a href="https://enormecorp.com" target="_blank" rel="noopener">ENORME</a></span><img class="pic" src="img/about-enorme.jpg" alt="ENORME launch" width="675" height="900" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2016–2025</mark></span><span>Co-Founder, Creative Director, <a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a></span><img class="pic" src="img/about-office.jpg" alt="Iris Alonzo and Carolina Crespo for Office Magazine, photograph by Camraface" width="816" height="1224" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2004–2015</mark></span><span>Global Creative Director, <mark>American Apparel</mark></span><img class="pic" src="img/about-aa-ad.jpg" alt="Meet Iris. — American Apparel" width="570" height="900" loading="lazy"></li>
+        <li><span class="yr">2003</span><span>Discovered post-modern design, <mark>Ettore Sottsass</mark> and the <mark>Memphis Group</mark></span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2002</mark></span><span>Discovered <mark>Buckminster Fuller</mark> and <mark>Andy Kaufman</mark></span><span class="pair"><img class="pic" src="img/about-fuller.jpg" alt="Buckminster Fuller, photograph by Dan Lindsay, CC BY 3.0" width="422" height="551" loading="lazy"><img class="pic" src="img/about-kaufman.jpg" alt="Debbie Harry and Andy Kaufman, 1983, photograph by Bernard Gotfryd" width="1400" height="909" loading="lazy"></span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>2000</mark></span><span>Discovered <mark>Tibor Kalman</mark></span><img class="pic" src="img/about-tibor.jpg" alt="Tibor Kalman: Perverse Optimist" width="804" height="970" loading="lazy"></li>
+        <li><span class="yr">1999–2004</span><span>Early career — intern at <mark>Nylon</mark>; producer and agent for <mark>Estevan Oriol</mark>, <mark>Mister Cartoon</mark>, <mark>Kevin Kerslake</mark>; Creative Director, <mark>Freshjive</mark></span></li>
+        <li><span class="yr">1997–1998</span><span><mark>American Rag Cie</mark> — worked the 100k sq ft vintage warehouse, going through endless bales of true vintage. A dream for a 17 year old.</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1996–2004</mark></span><span><mark>Self-directed education</mark> across Art Center, UCLA, LACC, SMC, Pierce</span><img class="pic" src="img/about-trailer.jpg" alt="On a train" width="900" height="675" loading="lazy"></li>
+        <li><span class="yr">1996</span><span>Studio Wardrobe Dept, iconic LA vintage archive</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1995–1998</mark></span><span>Repped by Dragon Talent Agency; formative cultural immersion</span><img class="pic" src="img/about-dragon.jpg" alt="Dragon Talent card" width="707" height="900" loading="lazy"></li>
+        <li><span class="yr">1995</span><span><mark>Graduated SOCES</mark>, a GATE high school, at 15</span></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1988</mark></span><span>Discovered <mark>Benjamin Franklin</mark></span><img class="pic" src="img/about-franklin.jpg" alt="Join, or Die — Benjamin Franklin, 1754" width="1400" height="1009" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1986</mark></span><span>Entered <mark>GATE</mark>; learned to code, communicate, create</span><img class="pic" src="img/about-kid.jpg" alt="Arms crossed" width="675" height="900" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1985–1989</mark></span><span>Read every <mark>Choose Your Own Adventure</mark> book and ending</span><img class="pic" src="img/about-horse.jpg" alt="On a horse" width="1200" height="847" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>1979–1997</mark></span><span>Raised on an 1880 family homestead, <mark>Angeles National Forest</mark>. Now a public park under the Santa Monica Mountains Conservancy.</span><img class="pic" src="img/about-homestead.jpg" alt="The homestead from above" width="1400" height="789" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>10/31/1979</mark></span><span>Born at sunset in LA on Halloween. Named <mark>“Siri”</mark> backwards.</span><img class="pic" src="img/about-baby.jpg" alt="Newborn" width="1400" height="1051" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>Parents</mark></span><span>Self portrait</span><img class="pic" src="img/about-parents.jpg" alt="Her parents" width="675" height="900" loading="lazy"></li>
+        <li class="haspic" tabindex="0"><span class="yr"><mark>Grandparents</mark></span><span>Mexican and Californian</span><span class="pair"><img class="pic" src="img/about-elders-2.jpg" alt="Mexican grandparents" width="900" height="675" loading="lazy"><img class="pic" src="img/about-elders-1.jpg" alt="Californian grandparents" width="900" height="675" loading="lazy"></span></li>
+    </ol>
+</section>
+
+<section id="past-work" class="fold">
+    <details>
+    <summary><h2>Past Work</h2></summary>
 <section id="everybody-world">
     <div class="head">
         <h2><a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a><span class="when">Co-founder and Creative Director 2016–2025</span></h2>
@@ -554,10 +608,13 @@ footer {
             <figure><img src="img/fj-propagandist-set.jpg" alt="The Freshjive Propagandist, complete" width="515" height="388" loading="lazy"><figcaption>The Propagandist, complete in its case</figcaption></figure>
         </div>
 </section>
+    </details>
+</section>
 
-<section id="civics">
+<section id="civics" class="fold">
+    <details>
+    <summary><h2>Civics</h2></summary>
     <div class="head">
-        <h2>Civics</h2>
         <p>As a fourth-generation Angeleno and fifth-generation Californian, I love this city
         and this state. I'm especially interested in communication, technology and design as
         they shape how we reach all citizens, so needs get met and resources don't go to waste.</p>
@@ -584,36 +641,7 @@ footer {
             in the California governor's race. I still volunteer and stay in the conversation on local and
             state politics, bringing what I've learned running businesses into the room.</p>
         </div>
-</section>
-
-<section id="about">
-    <div class="head">
-        <h2>How I Got Here</h2>
-    </div>
-    <button class="showpics" type="button">Show images</button>
-    <ol class="record">
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Founder, <mark>1000.world</mark> — interdisciplinary consulting parent company</span><img class="pic" src="../Iris2025.jpeg" alt="Iris Alonzo, 2025" width="640" height="501" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span><video class="pic" src="img/iris-market.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" muted loop playsinline preload="metadata"></video></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>CEO, <a href="https://enormecorp.com" target="_blank" rel="noopener">ENORME</a></span><img class="pic" src="img/about-enorme.jpg" alt="ENORME launch" width="675" height="900" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2016–2025</mark></span><span>Co-Founder, Creative Director, <a href="https://www.everybody.world" target="_blank" rel="noopener">Everybody.World</a></span><img class="pic" src="img/about-office.jpg" alt="Iris Alonzo and Carolina Crespo for Office Magazine, photograph by Camraface" width="816" height="1224" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2004–2015</mark></span><span>Global Creative Director, <mark>American Apparel</mark></span><img class="pic" src="img/about-aa-ad.jpg" alt="Meet Iris. — American Apparel" width="570" height="900" loading="lazy"></li>
-        <li><span class="yr">2003</span><span>Discovered post-modern design, <mark>Ettore Sottsass</mark> and the <mark>Memphis Group</mark></span></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2002</mark></span><span>Discovered <mark>Buckminster Fuller</mark> and <mark>Andy Kaufman</mark></span><span class="pair"><img class="pic" src="img/about-fuller.jpg" alt="Buckminster Fuller, photograph by Dan Lindsay, CC BY 3.0" width="422" height="551" loading="lazy"><img class="pic" src="img/about-kaufman.jpg" alt="Debbie Harry and Andy Kaufman, 1983, photograph by Bernard Gotfryd" width="1400" height="909" loading="lazy"></span></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>2000</mark></span><span>Discovered <mark>Tibor Kalman</mark></span><img class="pic" src="img/about-tibor.jpg" alt="Tibor Kalman: Perverse Optimist" width="804" height="970" loading="lazy"></li>
-        <li><span class="yr">1999–2004</span><span>Early career — intern at <mark>Nylon</mark>; producer and agent for <mark>Estevan Oriol</mark>, <mark>Mister Cartoon</mark>, <mark>Kevin Kerslake</mark>; Creative Director, <mark>Freshjive</mark></span></li>
-        <li><span class="yr">1997–1998</span><span><mark>American Rag Cie</mark> — worked the 100k sq ft vintage warehouse, going through endless bales of true vintage. A dream for a 17 year old.</span></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>1996–2004</mark></span><span><mark>Self-directed education</mark> across Art Center, UCLA, LACC, SMC, Pierce</span><img class="pic" src="img/about-trailer.jpg" alt="On a train" width="900" height="675" loading="lazy"></li>
-        <li><span class="yr">1996</span><span>Studio Wardrobe Dept, iconic LA vintage archive</span></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>1995–1998</mark></span><span>Repped by Dragon Talent Agency; formative cultural immersion</span><img class="pic" src="img/about-dragon.jpg" alt="Dragon Talent card" width="707" height="900" loading="lazy"></li>
-        <li><span class="yr">1995</span><span><mark>Graduated SOCES</mark>, a GATE high school, at 15</span></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>1988</mark></span><span>Discovered <mark>Benjamin Franklin</mark></span><img class="pic" src="img/about-franklin.jpg" alt="Join, or Die — Benjamin Franklin, 1754" width="1400" height="1009" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>1986</mark></span><span>Entered <mark>GATE</mark>; learned to code, communicate, create</span><img class="pic" src="img/about-kid.jpg" alt="Arms crossed" width="675" height="900" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>1985–1989</mark></span><span>Read every <mark>Choose Your Own Adventure</mark> book and ending</span><img class="pic" src="img/about-horse.jpg" alt="On a horse" width="1200" height="847" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>1979–1997</mark></span><span>Raised on an 1880 family homestead, <mark>Angeles National Forest</mark>. Now a public park under the Santa Monica Mountains Conservancy.</span><img class="pic" src="img/about-homestead.jpg" alt="The homestead from above" width="1400" height="789" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>10/31/1979</mark></span><span>Born at sunset in LA on Halloween. Named <mark>“Siri”</mark> backwards.</span><img class="pic" src="img/about-baby.jpg" alt="Newborn" width="1400" height="1051" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>Parents</mark></span><span>Self portrait</span><img class="pic" src="img/about-parents.jpg" alt="Her parents" width="675" height="900" loading="lazy"></li>
-        <li class="haspic" tabindex="0"><span class="yr"><mark>Grandparents</mark></span><span>Mexican and Californian</span><span class="pair"><img class="pic" src="img/about-elders-2.jpg" alt="Mexican grandparents" width="900" height="675" loading="lazy"><img class="pic" src="img/about-elders-1.jpg" alt="Californian grandparents" width="900" height="675" loading="lazy"></span></li>
-    </ol>
+    </details>
 </section>
 
 <section id="contact">
@@ -643,7 +671,7 @@ const io = new IntersectionObserver(entries => {
     seen.forEach((ratio, id) => { if (ratio > top) { top = ratio; best = id; } });
     links.forEach(a => a.setAttribute('aria-current', String(a.hash === '#' + best)));
 }, { rootMargin: '-140px 0px -45% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
-document.querySelectorAll('main section').forEach(s => io.observe(s));
+document.querySelectorAll('main > section').forEach(s => io.observe(s));
 
 // a row in the right-hand column opens its picture on the left
 const record = document.querySelector('.record');
@@ -699,6 +727,18 @@ document.querySelectorAll('.record .haspic').forEach(r => {
     r.addEventListener('mouseenter', enter); r.addEventListener('focus', enter);
     pic.addEventListener('animationend', () => r.classList.remove('gone'));
 });
+
+// opening a fold lays out the grids inside it
+document.querySelectorAll('.fold details').forEach(d => d.addEventListener('toggle', () => { fold(); place(); }));
+
+// a link into a closed fold opens it first
+const reveal = () => {
+    const t = location.hash && document.getElementById(location.hash.slice(1));
+    const d = t && (t.closest('details') || t.querySelector(':scope > details'));
+    if (d && !d.open) { d.open = true; t.scrollIntoView(); }
+};
+reveal();
+addEventListener('hashchange', reveal);
 
 // one tap shows them all on a phone
 const showpics = document.querySelector('.showpics');
