@@ -4,19 +4,39 @@ Guidance for Claude Code working in this repo.
 
 ## What this is
 
-1000.world is Iris Alonzo's personal site — a single hand-written HTML page
-plus three images. No build step, no framework, no server, no database.
+1000.world is Iris Alonzo's personal site — hand-written HTML, no build step,
+no framework, no server, no database.
 
-| File | Role |
+| Path | Role |
 |---|---|
-| `index.html` | The entire site. Inline `<style>`, no external CSS. |
-| `IRIS_VENN.png` | The venn diagram, the page's main content |
-| `Iris2025.jpeg` | Social-preview image (`og:image`) |
-| `favicon-32x32.png` | Favicon — 162KB, ~200x larger than it needs to be. Fix when touching it. |
+| `index.html` | The site. One page: intro, current projects, timeline, folded Past Work and Civics, contact. Inline `<style>` and `<script>`, no external files. |
+| `img/` | Every picture and video the page uses, resized to 900px on the long side, JPEG quality 82. |
+| `Iris2025.jpeg` | Social-preview image (`og:image`) and the 2025 timeline photo |
+| `favicon.svg`, `favicon-32x32.png`, `apple-touch-icon.png` | The "i" from the iris.market wordmark, black on the site's yellow. The SVG is the source; the PNGs are rendered from it. |
+| `1/` | The previous site: the venn diagram page and its PNG. Kept at 1000.world/1. |
+| `2/index.html` | A redirect to the root. The new page lived at 1000.world/2 while it was built and links to it were shared. |
 | `CNAME` | Contains `1000.world`. **Deleting this breaks the custom domain.** |
 
-Imported from the old host 2026-09-17, byte-for-byte, as the starting point for
-a rebuild.
+The venn page was imported from the old host 2026-09-17, byte-for-byte. The
+rebuild went live at the root 2026-10-01.
+
+### How the page works
+
+- Sections are plain `<section>`s under `<main>`. The nav highlights whichever
+  one is most in view.
+- Past Work and Civics are `<section class="fold">` wrapping a `<details>`.
+  The `<summary>` is the heading. A link into a fold (`#american-apparel`) or
+  to it (`#past-work`) opens it first.
+- Picture grids show two rows, then a "+N more" button. The script measures
+  rows after layout, and again when a fold opens.
+- The timeline (`.record`) opens each row's picture on hover, fixed in the
+  empty half of the screen. On phones a "Show images" button shows them all.
+- The iris.market video uses a `poster` taken from its first frame plus a
+  Play button that hides while it plays. Regenerate the poster with
+  `ffmpeg -i img/iris-market-sound.mp4 -frames:v 1 img/iris-market-poster.jpg`.
+
+Hidden captions, credits and alt text carry names and dates. Never invent them;
+ask Iris.
 
 ## Deploying
 
