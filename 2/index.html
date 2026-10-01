@@ -283,6 +283,28 @@ section:last-of-type { border-bottom: 0; }
 .cluster .line a:hover { background: var(--ink); color: var(--hi); }
 .cluster .line { flex: 0 0 100%; margin: 0 0 6px; max-width: 56ch; font-size: clamp(15px, 1.5vw, 18px); }
 
+/* the section video: a Play button sits on the still until it runs */
+.cluster figure.player { display: inline-block; }
+.cluster .play {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 7px 10px;
+    border: 0;
+    background: var(--hi);
+    color: var(--ink);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.cluster .play:hover { background: var(--ink); color: var(--hi); }
+.cluster figure.playing .play { display: none; }
+
 /* long grids show two rows, then a button */
 .cluster .more {
     flex: 0 0 100%;
@@ -407,9 +429,9 @@ footer {
     <div class="head">
         <p>When I finished high school at fifteen, my mom asked what I wanted to do with
         my life. I said I wanted someone to pay me to have good ideas. She said she didn't
-        think that was a job.</p>
-        <p>I went looking for it anyway. In publishing, music, film, photography and fashion.
-        It took me years to realize the job had a name — creative director — and that I'd
+        think that was a job. I went looking for it anyway in publishing, music, film,
+        photography and fashion.</p>
+        <p>It took me years to realize the job had a name — creative director — and that I'd
         been doing what I loved all along. Having ideas. The medium just kept changing.</p>
         <p>Now I'm interested in what an idea can actually do. How it might change the way we
         connect, help each other and live together.</p>
@@ -429,7 +451,7 @@ footer {
         <p><a href="https://iris.market/about" target="_blank" rel="noopener">Learn more and sign up</a></p>
     </div>
         <div class="cluster big">
-            <figure><video class="film" src="img/iris-market-sound.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" playsinline preload="metadata"></video></figure>
+            <figure class="player"><video class="film" src="img/iris-market-sound.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" playsinline preload="metadata"></video><button class="play" type="button" aria-label="Play">Play</button></figure>
         </div>
 </section>
 
@@ -444,10 +466,15 @@ footer {
         by the Museum of Modern Art.</p>
     </div>
         <div class="cluster big">
-            <figure><img src="img/en-phones.jpg" alt="Three ENORME telephones" width="900" height="600" loading="lazy"><figcaption>Three ENORME telephones, sealed since 1985</figcaption></figure>
+            <figure><img src="img/en-team.jpg" alt="The ENORME partners" width="900" height="675" loading="lazy"><figcaption>The ENORME partners, 2026</figcaption></figure>
+            <figure><img src="img/en-sketch.jpg" alt="ENORME telephone sketches by Ettore Sottsass" width="656" height="900" loading="lazy"><figcaption>Ettore Sottsass's sketches for the ENORME telephone</figcaption></figure>
+            <figure><img src="img/en-ring-karl.jpg" alt="Karl Lagerfeld on the Tawaraya Ring" width="900" height="450" loading="lazy"><figcaption>Karl Lagerfeld on Masanori Umeda's Tawaraya Ring</figcaption></figure>
+            <figure><img src="img/en-ring-memphis.jpg" alt="The Memphis Group on the Tawaraya Ring" width="900" height="635" loading="lazy"><figcaption>The Memphis Group on the Tawaraya Ring, 1981</figcaption></figure>
+            <figure><img src="img/en-sottsass-stanford.jpg" alt="Ettore Sottsass at Stanford" width="900" height="595" loading="lazy"><figcaption>Ettore Sottsass at Stanford</figcaption></figure>
+            <figure><img src="img/en-kitchen.jpg" alt="Four men in a kitchen" width="900" height="763" loading="lazy"><figcaption>Kitchen</figcaption></figure>
+            <figure><img src="img/en-phones.jpg" alt="Three ENORME telephones" width="900" height="600" loading="lazy"><figcaption>Three ENORME telephones, sealed since 1985 — photograph by Maya Fuhr</figcaption></figure>
             <figure><img src="img/en-design.jpg" alt="ENORME telephone on a design magazine" width="675" height="900" loading="lazy"><figcaption>The telephone, on the magazine that first ran it</figcaption></figure>
             <figure><img src="img/en-envelope.jpg" alt="ENORME envelope" width="675" height="900" loading="lazy"><figcaption>The original ENORME envelope</figcaption></figure>
-            <figure><img src="img/en-cards.jpg" alt="ENORME business cards" width="900" height="675" loading="lazy"><figcaption>ENORME Corporation business cards, found with the stock</figcaption></figure>
             <figure><img src="img/en-grid.jpg" alt="ENORME advertising grid" width="900" height="652" loading="lazy"><figcaption>The original ENORME advertising</figcaption></figure>
             <figure><img src="img/en-statement.jpg" alt="Statement by Marco Zanini, 2025" width="663" height="900" loading="lazy"><figcaption>Marco Zanini on the revival, 2025</figcaption></figure>
         </div>
@@ -660,6 +687,7 @@ footer {
     <span>Buckminster Fuller photograph by Dan Lindsay, CC BY 3.0</span>
     <span>Andy Kaufman photograph by Bernard Gotfryd</span>
     <span>Everybody.World portrait by Camraface for Office Magazine</span>
+    <span>ENORME telephones photograph by Maya Fuhr</span>
 </footer>
 
 <script>
@@ -716,7 +744,15 @@ document.querySelectorAll('.record .haspic > video').forEach(v => {
 });
 
 // the section video: click to play, click to pause
-document.querySelectorAll('.film').forEach(v => v.addEventListener('click', () => v.paused ? v.play() : v.pause()));
+document.querySelectorAll('.film').forEach(v => {
+    const fig = v.closest('figure');
+    const toggle = () => v.paused ? v.play() : v.pause();
+    v.addEventListener('click', toggle);
+    fig.querySelector('.play')?.addEventListener('click', toggle);
+    v.addEventListener('play', () => fig.classList.add('playing'));
+    v.addEventListener('pause', () => fig.classList.remove('playing'));
+    v.addEventListener('ended', () => fig.classList.remove('playing'));
+});
 
 // when you leave a row, its picture lingers and clears
 document.querySelectorAll('.record .haspic').forEach(r => {
