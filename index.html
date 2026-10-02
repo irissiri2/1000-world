@@ -241,11 +241,15 @@ section:last-of-type { border-bottom: 0; }
     100% { opacity: 0; filter: blur(18px); transform: translate(-50%, -56%) scale(1.08); }
 }
 
-/* phones have no hover, so one tap opens every picture at once */
+/* phones have no hover, so one tap opens every picture at once;
+   the button rides the bottom-right corner while the timeline is on screen */
 .showpics {
     display: none;
-    margin: 28px 0 0;
-    padding: 7px 10px;
+    position: sticky;
+    bottom: 16px;
+    margin: 28px 0 0 auto;
+    padding: 9px 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,.18);
     border: 0;
     background: var(--hi);
     color: var(--ink);
@@ -485,7 +489,6 @@ footer {
     <div class="head">
         <h2>How I Got Here</h2>
     </div>
-    <button class="showpics" type="button">Show images</button>
     <ol class="record">
         <li class="haspic" tabindex="0"><span class="yr"><mark>2026—</mark></span><span>Building <mark>iris.market</mark>, a needs and resources matching platform</span><video class="pic" src="img/iris-market.mp4" poster="img/iris-market-poster.jpg" width="640" height="480" muted loop playsinline preload="metadata"></video></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>2025—</mark></span><span>Founder, <mark>1000.world</mark> — interdisciplinary consulting parent company</span><img class="pic" src="Iris2025.jpeg" alt="Iris Alonzo, 2025" width="640" height="501" loading="lazy"></li>
@@ -509,6 +512,7 @@ footer {
         <li class="haspic" tabindex="0"><span class="yr"><mark>Parents</mark></span><span>Self portrait</span><img class="pic" src="img/about-parents.jpg" alt="Her parents" width="675" height="900" loading="lazy"></li>
         <li class="haspic" tabindex="0"><span class="yr"><mark>Grandparents</mark></span><span>Mexican and Californian</span><span class="pair"><img class="pic" src="img/about-elders-2.jpg" alt="Mexican grandparents" width="900" height="675" loading="lazy"><img class="pic" src="img/about-elders-1.jpg" alt="Californian grandparents" width="900" height="675" loading="lazy"></span></li>
     </ol>
+    <button class="showpics" type="button">Show images</button>
 </section>
 
 <section id="past-work" class="fold">
