@@ -346,6 +346,26 @@ section:last-of-type { border-bottom: 0; }
     max-width: 34ch;
 }
 
+/* the pull quote is the switch, a tap opens the full text */
+.quote { max-width: 1400px; margin: 0 auto; }
+.quote summary { list-style: none; cursor: pointer; width: max-content; max-width: 100%; }
+.quote summary::-webkit-details-marker { display: none; }
+.quote blockquote { margin: 0; }
+.quote blockquote p {
+    margin: 0 0 18px;
+    font-size: clamp(30px, 5.3vw, 76px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+}
+.quote blockquote p span { display: block; }
+.quote blockquote cite { display: block; font-style: normal; font-size: clamp(15px, 1.5vw, 18px); }
+.quote blockquote cite::after { content: " +"; }
+.quote[open] blockquote cite::after { content: " \2212"; }
+.quote summary:hover blockquote p { background: var(--hi); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.quote[open] summary { margin-bottom: 44px; }
+.quote .head { margin-bottom: 0; }
+
 /* folded sections: the heading is the switch, a tap opens the rest */
 .fold details { max-width: 1400px; margin: 0 auto; }
 .fold summary { list-style: none; cursor: pointer; width: max-content; max-width: 100%; }
@@ -386,6 +406,7 @@ footer {
     section { padding: 48px 0; }
     .head { margin-bottom: 26px; }
     .fold details[open] summary { margin-bottom: 26px; }
+    .quote[open] summary { margin-bottom: 26px; }
     .fold section { padding-bottom: 48px; }
     .cluster { gap: 8px; margin-bottom: 40px; }
     .cluster.big { --row: 220px; gap: 10px; }
@@ -437,19 +458,25 @@ footer {
 <main>
 
 <section id="intro">
+    <details class="quote">
+    <summary>
+        <blockquote>
+            <p><span>We don’t have a resource problem.</span> <span>We have a coordination problem.</span></p>
+            <cite>— Iris Alonzo</cite>
+        </blockquote>
+    </summary>
     <div class="head">
-        <p>When I finished high school at fifteen, my mom asked what I wanted to do with
-        my life. I said I wanted someone to pay me to have good ideas. She said she didn't
-        think that was a job. I went looking for it anyway in publishing, music, film,
-        photography and fashion.</p>
-        <p>It took me years to realize the job had a name — creative director — and that I'd
-        been doing what I loved all along. Having ideas. The medium just kept changing.</p>
-        <p>Now I'm interested in what an idea can actually do. How it might change the way we
-        connect, help each other and live together.</p>
-        <p>Which is how I find myself building iris.market around the oldest idea in commerce:
-        we're neighbors, I have this, you need that, let's trade. Somewhere along the way we
-        automated the people out of it. iris.market is my attempt to bring them back.</p>
+        <p>I finished high school at fifteen and told my mom I wanted someone to pay me to
+        have good ideas. She said that didn’t sound like a job.</p>
+        <p>I went looking anyway, through publishing, music, film, photography and fashion.
+        Turns out, my dream job had a title: creative director. And I’d been doing it all
+        along.</p>
+        <p>Now I want to see what an idea can do to change the way we live together.</p>
+        <p>We don’t have a resource problem. We have a coordination problem. We have the
+        data, the technology, the wisdom and each other. This is our chance to connect the
+        dots.</p>
     </div>
+    </details>
 </section>
 
 <section id="iris-market">
