@@ -42,48 +42,24 @@ header {
     z-index: 30;
     background: var(--paper);
     border-bottom: 1px solid var(--ink);
-    padding: 22px 28px 16px;
-}
-.name {
+    padding: 18px 28px 14px;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: 0 18px;
-    margin-bottom: 20px;
-}
-.name h1 {
-    margin: 0;
-    background: var(--hi);
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-    padding: 0 .08em;
-    font-size: clamp(28px, 6.2vw, 62px);
-    letter-spacing: -0.02em;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-.name p {
-    margin: 0;
-    font-size: clamp(11px, 1.4vw, 14px);
+    gap: 8px 34px;
+    font-size: clamp(11px, 1.3vw, 13px);
     letter-spacing: 0.14em;
     text-transform: uppercase;
 }
-nav ol {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0 34px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
+.name { display: flex; flex-wrap: wrap; align-items: baseline; gap: inherit; width: 100%; }
+nav, nav ol { display: contents; }
+nav ol { margin: 0; padding: 0; list-style: none; }
+.name h1, .name p { margin: 0; padding: 4px 3px; font-size: inherit; font-weight: inherit; letter-spacing: inherit; background: var(--hi); }
 nav a {
     display: inline-block;
     padding: 4px 3px;
     color: var(--ink);
     text-decoration: none;
-    font-size: clamp(11px, 1.3vw, 13px);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
 }
 nav a:hover { background: var(--hi); }
 nav a[aria-current="true"] { background: var(--hi); }
@@ -91,7 +67,7 @@ mark { background: var(--hi); color: inherit; }
 
 main { padding: 0 28px; }
 section {
-    scroll-margin-top: 132px;
+    scroll-margin-top: calc(var(--bar) + 24px);
     padding: 76px 0;
     border-bottom: 1px solid var(--ink);
 }
@@ -359,9 +335,10 @@ section:last-of-type { border-bottom: 0; }
     font-weight: 700;
 }
 .quote blockquote p span { display: block; }
+.quote blockquote p span:first-child { text-indent: -0.42em; }
 .quote blockquote cite { display: block; font-style: normal; font-size: clamp(15px, 1.5vw, 18px); }
-.quote blockquote cite::after { content: " +"; }
-.quote[open] blockquote cite::after { content: " \2212"; }
+.quote blockquote p span:last-child::after { content: " +"; }
+.quote[open] blockquote p span:last-child::after { content: " \2212"; }
 .quote summary:hover blockquote p { background: var(--hi); box-decoration-break: clone; -webkit-box-decoration-break: clone; }
 .quote[open] summary { margin-bottom: 44px; }
 .quote .head { margin-bottom: 0; }
@@ -399,9 +376,7 @@ footer {
 @media (max-width: 760px) {
     :root { --row: 128px; }
     .brand { padding: 22px 18px 6px; }
-    header { padding: 16px 18px 12px; }
-    .name { margin-bottom: 14px; gap: 0 12px; }
-    nav ol { gap: 0 18px; }
+    header { padding: 12px 18px 10px; gap: 2px 18px; }
     main { padding: 0 18px; }
     section { padding: 48px 0; }
     .head { margin-bottom: 26px; }
@@ -461,7 +436,7 @@ footer {
     <details class="quote">
     <summary>
         <blockquote>
-            <p><span>We don’t have a resource problem.</span> <span>We have a coordination problem.</span></p>
+            <p><span>“We don’t have a resource problem.</span> <span>We have a coordination problem.”</span></p>
             <cite>— Iris Alonzo</cite>
         </blockquote>
     </summary>
